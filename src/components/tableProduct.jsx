@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Table, Button } from "antd";
 import "antd/dist/antd.css";
+import axios from "axios";
 
 const TableProduct = (props) => {
     const dataSource = [
@@ -56,7 +57,11 @@ const TableProduct = (props) => {
             key: 'option',
         },
     ];
-    const [data, setdata] = useState()
+    const API_URL = "/api/tda/ims-be/products";
+    // const [data, setdata] = useState()
+    const reponse = axios.get(API_URL);
+    console.log(reponse);
+
     return (
         <div style={{ height: " calc(100vh- 60px)", padding: '0px 40px' }}>
             <label>
